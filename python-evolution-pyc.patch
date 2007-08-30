@@ -1,0 +1,18 @@
+diff -ur evolution-python-0.0.3-o/configure.ac evolution-python-0.0.3/configure.ac
+--- evolution-python-0.0.3-o/configure.ac	2007-08-19 16:46:06.000000000 -0600
++++ evolution-python-0.0.3/configure.ac	2007-08-28 18:44:34.000000000 -0600
+@@ -49,12 +49,12 @@
+ AC_MSG_RESULT($PYGTK_DEFSDIR)
+ 
+ AC_MSG_CHECKING(for pygtk codegen.py)
+-PYGTK_CODEGEN="$PYTHON `$PKG_CONFIG --variable=codegendir pygtk-2.0`/codegen.py"
++PYGTK_CODEGEN="$PYTHON `$PKG_CONFIG --variable=codegendir pygtk-2.0`/codegen.pyc"
+ AC_SUBST(PYGTK_CODEGEN)
+ AC_MSG_RESULT($PYGTK_CODEGEN)
+ 
+ AC_MSG_CHECKING(for pygtk h2def.py)
+-PYGTK_H2DEFS="$PYTHON `$PKG_CONFIG --variable=codegendir pygtk-2.0`/h2def.py"
++PYGTK_H2DEFS="$PYTHON `$PKG_CONFIG --variable=codegendir pygtk-2.0`/h2def.pyc"
+ AC_SUBST(PYGTK_H2DEFS)
+ AC_MSG_RESULT($PYGTK_H2DEFS)
+ 
