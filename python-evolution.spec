@@ -1,12 +1,11 @@
-# TODO: rename to python-evolution
 Summary:	Python bindings for Evolution
 Summary(pl.UTF-8):	Wiązania Pythona do Evolution
-Name:		evolution-python
+Name:		python-evolution
 Version:	0.0.3
 Release:	1
 License:	GPL v2
 Group:		Libraries/Python
-Source0:	http://files.conduit-project.org/releases/%{name}-%{version}.tar.gz
+Source0:	http://files.conduit-project.org/releases/evolution-python-%{version}.tar.gz
 # Source0-md5:	0ef1afcc79ae9f190ed2260eb1b1fcdd
 Patch0:		%{name}-pyc.patch
 URL:		http://www.conduit-project.org/
@@ -44,7 +43,7 @@ Development files for evolution-python binding.
 Pliki programistyczne wiązania evolution-python.
 
 %prep
-%setup -q
+%setup -q -n evolution-python-%{version}
 %patch0 -p1
 
 %build
