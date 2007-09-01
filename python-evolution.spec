@@ -10,13 +10,19 @@ Source0:	http://files.conduit-project.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	0ef1afcc79ae9f190ed2260eb1b1fcdd
 Patch0:		%{name}-pyc.patch
 URL:		http://www.conduit-project.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	evolution-devel
+BuildRequires:	evolution-data-server-devel >= 1.4.0
+BuildRequires:	gtk+2-devel >= 1:2.0
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	python-devel
-BuildRequires:	python-pygtk-devel
+BuildRequires:	python-pygobject-devel >= 2.6
+BuildRequires:	python-pygtk-devel >= 2:2.4.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	python-pygobject >= 2.6
+Requires:	python-pygtk-gtk >= 2:2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,6 +35,7 @@ Summary:	Development files for evolution-python binding
 Summary(pl):	Pliki programistyczne wiązania evolution-python
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	python-gtk-devel >= 2:2.4.0
 
 %description devel
 Development files for evolution-python binding.
@@ -41,8 +48,10 @@ Pliki programistyczne wiązania evolution-python.
 %patch0 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
