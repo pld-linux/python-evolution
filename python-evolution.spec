@@ -1,12 +1,12 @@
 Summary:	Python bindings for Evolution
 Summary(pl.UTF-8):	Wiązania Pythona do Evolution
 Name:		python-evolution
-Version:	0.0.3
+Version:	0.0.4
 Release:	1
 License:	GPL v2
 Group:		Libraries/Python
 Source0:	http://files.conduit-project.org/releases/evolution-python-%{version}.tar.gz
-# Source0-md5:	0ef1afcc79ae9f190ed2260eb1b1fcdd
+# Source0-md5:	2d08555f0a6de288bfcc3b048d98b3e4
 Patch0:		%{name}-pyc.patch
 URL:		http://www.conduit-project.org/
 BuildRequires:	autoconf >= 2.50
@@ -28,18 +28,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Python bindings for Evolution.
 
 %description -l pl.UTF-8
+Wiązania Pythona do Evolution.
 
 %package devel
 Summary:	Development files for evolution-python binding
-Summary(pl):	Pliki programistyczne wiązania evolution-python
+Summary(pl.UTF-8):	Pliki programistyczne wiązania evolution-python
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-gtk-devel >= 2:2.4.0
+Requires:	python-pygtk-devel >= 2:2.4.0
 
 %description devel
 Development files for evolution-python binding.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Pliki programistyczne wiązania evolution-python.
 
 %prep
@@ -52,7 +53,8 @@ Pliki programistyczne wiązania evolution-python.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--enable-ecal
 %{__make}
 
 %install
