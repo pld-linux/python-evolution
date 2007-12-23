@@ -2,7 +2,7 @@ Summary:	Python bindings for Evolution
 Summary(pl.UTF-8):	Wiązania Pythona do Evolution
 Name:		python-evolution
 Version:	0.0.4
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries/Python
 Source0:	http://files.conduit-project.org/releases/evolution-python-%{version}.tar.gz
@@ -63,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%py_comp $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/evolution
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/evolution
 %py_postclean
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/gtk-2.0/evolution/*.la
