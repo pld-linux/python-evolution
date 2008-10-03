@@ -2,7 +2,7 @@ Summary:	Python bindings for Evolution
 Summary(pl.UTF-8):	Wiązania Pythona do Evolution
 Name:		python-evolution
 Version:	0.0.4
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Libraries/Python
 Source0:	http://files.conduit-project.org/releases/evolution-python-%{version}.tar.gz
